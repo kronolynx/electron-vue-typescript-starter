@@ -1,8 +1,8 @@
 <template lang="pug">
   div
-    //- img#logo(src="~@src/renderer/assets/logo.png")
+    img#logo(src="~@/assets/logo.png")
     h3.title Welcome 
-    | This is the Home page {{`@src`}}
+    | This is the Home page 
 </template>
 
 <script lang='ts'>
@@ -13,6 +13,12 @@ import Component from "vue-class-component"
 export default class Home extends Vue {}
 </script>
 
-
+<style lang="stylus">
+  #logo {
+    height: auto;
+    margin-bottom: 20px;
+    width: 420px;
+  }
+</style>
 
 

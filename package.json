@@ -21,7 +21,7 @@
   },
   "build": {
     "productName": "vue-ts-boiler",
-    "appId": "org.simulatedgreg.electron-vue",
+    "appId": "org.witnet.electron-vue",
     "directories": {
       "output": "build"
     },

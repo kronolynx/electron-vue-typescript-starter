@@ -26,3 +26,8 @@
   }
 </script>
 
+<style lang="stylus" >
+  #counter {
+    padding : 20px;
+  }
+</style>
