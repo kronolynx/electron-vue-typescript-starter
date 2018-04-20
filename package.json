@@ -17,7 +17,7 @@
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
     "test": "npm run unit && npm run e2e",
     "unit": "karma start test/unit/karma.conf.js",
-    "postinstall": ""
+    "lint": "tslint --project tsconfig.json --force"
   },
   "build": {
     "productName": "vue-ts-boiler",
@@ -107,6 +107,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "ts-loader": "^3.1.1",
+    "tslint": "^5.9.1",
     "typescript": "^2.6.1",
     "url-loader": "^0.5.9",
     "vue-html-loader": "^1.2.4",

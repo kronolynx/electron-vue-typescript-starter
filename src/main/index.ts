@@ -1,12 +1,12 @@
-import { BrowserWindow, app } from "electron";
+import { BrowserWindow, app } from "electron"
 
-let mainWindow: BrowserWindow | null;
+let mainWindow: BrowserWindow | undefined
 const winURL =
   process.env.NODE_ENV === "development"
     ? `http://localhost:9080`
-    : `file://${__dirname}/index.html`;
+    : `file://${__dirname}/index.html`
 
-function createWindow() {
+const createWindow = async () => {
   /**
    * Initial window options
    */
@@ -14,35 +14,39 @@ function createWindow() {
     height: 563,
     useContentSize: true,
     width: 1000
-  });
+  })
 
-  mainWindow.loadURL(winURL);
+  mainWindow.loadURL(winURL)
 
   mainWindow.on("closed", () => {
-    mainWindow = null;
-  });
+    mainWindow = undefined
+  })
 }
 
-app.on("ready", createWindow);
+app.on("ready", createWindow)
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
-    app.quit();
+    app.quit()
   }
-});
+})
 
 app.on("activate", () => {
-  if (mainWindow === null) {
-    createWindow();
+  if (mainWindow === undefined) {
+    createWindow()
+      .catch(() => {
+        console.log("error starting electron")
+      })
   }
-});
+})
 
 /**
  * Auto Updater
  *
  * Uncomment the following code below and install `electron-updater` to
  * support auto updating. Code Signing with a valid certificate is required.
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
+ * https://simulatedgreg.gitbooks.io/electron-vue/
+ * content/en/using-electron-builder.html#auto-updating
  */
 
 /*
