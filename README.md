@@ -1,6 +1,8 @@
-# vue-ts-boiler
+# electron-vue-typescript-starter
 
 > An electron-vue project
+> A starter project for an Electron app built with Vue in TypeScript. 
+Originally based on the [electron-vue boilerplate](https://github.com/SimulatedGREG/electron-vue).
 
 #### Build Setup
 
